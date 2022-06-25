@@ -1,16 +1,16 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
+trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-start "Azure Functions v3 Core Tools"
+start "Azure Functions v4 Core Tools"
 
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb
-# Register the Microsoft repository GPG keys
-sudo dpkg -i /tmp/packages-microsoft-prod.deb
-
+# install azure functions
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
 sudo apt-get update
-sudo apt-get install -y azure-functions-core-tools-3
+sudo apt-get install azure-functions-core-tools-4
 
 end 'func' '--version'

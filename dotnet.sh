@@ -1,19 +1,21 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
+trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-ver="3.1"
+# https://github.com/dotnet/core/releases
+ver="6.0"
+
 start ".NET Core SDK $ver"
 
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb
-# Register the Microsoft repository GPG keys
-sudo dpkg -i /tmp/packages-microsoft-prod.deb
-
-sudo add-apt-repository universe
-sudo apt-get install apt-transport-https
-sudo apt-get update -y
-sudo apt-get install dotnet-sdk-$ver -y
+# install dotnet
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y apt-transport-https && \
+sudo apt-get update && \
+sudo apt-get install -y dotnet-sdk-$ver
 
 end 'dotnet' '--version'

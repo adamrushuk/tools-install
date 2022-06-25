@@ -1,12 +1,17 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
+trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-ver="10.5.1"
+# https://github.com/Azure/azure-storage-azcopy/releases
+ver="10"
+
 start "AzCopy v$ver"
 
-wget -q -O /tmp/azcopy.tar https://aka.ms/downloadazcopy-v$ver-linux
+# install AzCopy
+# https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10
+wget -q -O /tmp/azcopy.tar https://aka.ms/downloadazcopy-v10-linux
 cd /tmp
 tar -xf azcopy.tar
 cd azcopy_linux_amd64_$ver.*

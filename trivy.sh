@@ -1,14 +1,16 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
+trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://aquasecurity.github.io/trivy/v0.18.3/installation/
 # https://github.com/aquasecurity/trivy/releases
-ver="0.19.2"
+ver="0.29.2"
 
 start "Trivy $ver"
 
+# install
 cd /tmp
 wget https://github.com/aquasecurity/trivy/releases/download/v${ver}/trivy_${ver}_Linux-64bit.deb
 sudo dpkg -i trivy_${ver}_Linux-64bit.deb
