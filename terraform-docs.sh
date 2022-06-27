@@ -4,7 +4,7 @@ trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-# https://github.com/terraform-docs/terraform-docs#readme
+# https://github.com/terraform-docs/terraform-docs/releases
 VERSION="v0.16.0"
 
 start "terraform-docs $VERSION"
@@ -18,4 +18,3 @@ mv terraform-docs "$HOME/.local/bin"
 rm terraform-docs.tar.gz
 
 end 'terraform-docs' '--version'
-
