@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/hashicorp/terraform/releases
-ver="1.2.4"
+ver="1.2.8"
 
 start "Terraform $ver"
 
