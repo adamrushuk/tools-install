@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/Azure/aztfy/releases
-ver="0.5.0"
+ver="0.7.0"
 
 start "Terrafy $ver"
 

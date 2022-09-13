@@ -5,6 +5,8 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2#installation-via-package-repository
+# apt-cache madison powershell | head -n 40
+# apt list -a powershell
 
 start "PowerShell (ubuntu-2204)"
 
