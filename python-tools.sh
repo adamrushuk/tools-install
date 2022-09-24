@@ -6,8 +6,8 @@ source "$DIR/.lib.sh"
 
 # https://pypi.org/project/tldr/#history
 TLDR_VERSION='3.1.0'
-# TOOL_VERSION='x.x.x'
+# PACKAGE_VERSION='x.x.x'
 
 pip install --no-input \
     tldr==${TLDR_VERSION} \
-    # tldr==${TOOLD_VERSION} \
+    # package_name==${PACKAGE_VERSION} \
