@@ -5,8 +5,9 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # show available versions (only available after adding k8s apt repo):
-# apt-cache madison kubectl | head -n 40
-VERSION="1.22.11-00"
+# apt-cache madison kubectl | head -n 30
+# apt list -a kubectl | head -n 30
+VERSION="1.23.13-00"
 
 start "kubectl $VERSION"
 
