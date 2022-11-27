@@ -4,11 +4,14 @@ trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-# installs exercism https://exercism.org/cli-walkthrough
+# installs exercism
+# https://exercism.org/cli-walkthrough
 
 # vars
+# https://github.com/exercism/cli/releases
+VERSION="3.1.0"
 TOOL_NAME='exercism'
-DOWNLOAD_URL='https://github.com/exercism/cli/releases/download/v3.1.0/exercism-3.1.0-linux-x86_64.tar.gz'
+DOWNLOAD_URL="https://github.com/exercism/cli/releases/download/v${VERSION}/exercism-${VERSION}-linux-x86_64.tar.gz"
 DOWNLOAD_FILE="$TOOL_NAME.tar.gz"
 DOWNLOAD_DIR="/tmp/$TOOL_NAME"
 INSTALL_PATH="$HOME/.local/bin"
