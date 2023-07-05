@@ -7,7 +7,7 @@ source "$DIR/.lib.sh"
 # installs GitLab CLI https://gitlab.com/gitlab-org/cli
 
 # vars
-VERSION='1.24.1'
+VERSION='1.31.0'
 TOOL_NAME='GitLab CLI'
 DOWNLOAD_URL="https://gitlab.com/gitlab-org/cli/-/releases/v${VERSION}/downloads/glab_${VERSION}_Linux_x86_64.deb"
 DOWNLOAD_DIR=$(mktemp --directory)
@@ -21,6 +21,8 @@ mkdir -p "$DOWNLOAD_DIR"
 curl --location "$DOWNLOAD_URL" --output "$DOWNLOAD_PATH"
 
 # install
+# sudo dpkg-query -l | grep glab
+# sudo dpkg --remove glab
 sudo dpkg --install "$DOWNLOAD_PATH"
 
 # cleanup
