@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/Azure/aztfexport/releases
-ver="0.11.0"
+ver="0.13.1"
 
 start "Microsoft Azure Export for Terraform (aztfexport) $ver"
 

@@ -6,8 +6,8 @@ source "$DIR/.lib.sh"
 
 # https://github.com/hashicorp/packer/releases
 # apt-cache madison packer | head -n 40
-# apt list -a packer
-VERSION="1.8.3-1"
+# apt list update && apt list -a packer
+VERSION="1.8.5-1"
 
 start "Packer $VERSION"
 

@@ -10,11 +10,11 @@ echo
 
 # https://github.com/databus23/helm-diff/releases
 helm plugin uninstall diff 2>/dev/null
-helm plugin install https://github.com/databus23/helm-diff --version v3.5.0
+helm plugin install https://github.com/databus23/helm-diff --version v3.8.1
 
 # https://github.com/helm/helm-mapkubeapis/releases
 helm plugin uninstall mapkubeapis 2>/dev/null
-helm plugin install https://github.com/helm/helm-mapkubeapis --version v0.3.0
+helm plugin install https://github.com/helm/helm-mapkubeapis --version v0.4.1
 
 echo -e "\nHelm Plugins:"
 helm plugin list

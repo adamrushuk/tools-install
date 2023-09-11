@@ -4,9 +4,9 @@ trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-# https://aquasecurity.github.io/trivy/v0.18.3/installation/
+# https://aquasecurity.github.io/trivy/latest/getting-started/installation/
 # https://github.com/aquasecurity/trivy/releases
-ver="0.29.2"
+ver="0.45.0"
 
 start "Trivy $ver"
 

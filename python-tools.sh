@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://pypi.org/project/tldr/#history
-TLDR_VERSION='3.1.0'
+TLDR_VERSION='3.2.0'
 # PACKAGE_VERSION='x.x.x'
 
 pip install --no-input \

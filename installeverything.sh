@@ -9,7 +9,6 @@ sudo apt upgrade -y
 
 sh ./azcopy.sh
 sh ./azure-cli.sh
-sh ./azure-cli.sh
 sh ./docker-client.sh
 sh ./docker-engine.sh
 sh ./dotnet.sh
