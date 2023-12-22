@@ -32,4 +32,4 @@ sudo apt-get update
 sudo apt-get install -y kubectl=$VERSION
 # sudo apt-get remove -y kubectl
 
-end 'kubectl' 'version --short --client=true'
+end 'kubectl' 'version --client=true'
