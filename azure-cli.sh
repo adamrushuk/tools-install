@@ -15,12 +15,11 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 # https://github.com/Azure/kubelogin
 
 # use default aks version
-VERSION=$(az aks get-versions --location uksouth --output tsv --query "orchestrators | [?default].orchestratorVersion")
-sudo az aks install-cli --client-version "$VERSION"
+sudo az aks install-cli
 
 # version info
 command -v kubectl
-kubectl version --short --client=true
+kubectl version --client=true
 command -v kubelogin
 kubelogin --version
 
