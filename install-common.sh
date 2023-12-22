@@ -11,7 +11,6 @@ echo -e "\e[34m»»» 🚀 \e[32mInstalling \e[33m'Common Tools'\e[32m ... \e[39
 ~/tools/azure-cli.sh
 ~/tools/helm.sh
 ~/tools/kube-tools.sh
-~/tools/kubectl.sh
 ~/tools/misc.sh
 ~/tools/powershell.sh
 ~/tools/terraform.sh
