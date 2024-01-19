@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/JanDeDobbeleer/oh-my-posh3/releases
-ver="v18.8.1"
+ver="v19.6.0"
 
 start "oh-my-posh $ver"
 

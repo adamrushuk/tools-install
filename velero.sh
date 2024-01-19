@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/vmware-tanzu/velero/releases
-ver="v1.12.2"
+ver="v1.12.3"
 
 start "Velero $ver"
 

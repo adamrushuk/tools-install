@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/aquasecurity/tfsec/releases
-VERSION="v1.28.4"
+VERSION="v1.28.5"
 
 start "tfsec $VERSION"
 

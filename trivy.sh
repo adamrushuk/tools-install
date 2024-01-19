@@ -6,7 +6,7 @@ source "$DIR/.lib.sh"
 
 # https://aquasecurity.github.io/trivy/latest/getting-started/installation/
 # https://github.com/aquasecurity/trivy/releases
-ver="0.45.0"
+ver="0.48.3"
 
 start "Trivy $ver"
 
