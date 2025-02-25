@@ -13,6 +13,9 @@ echo -e "\e[34m»»» 🚀 \e[32mInstalling \e[33m'Common Tools'\e[32m ... \e[39
 ~/tools/kube-tools.sh
 ~/tools/misc.sh
 ~/tools/powershell.sh
+~/tools/pre-commit.sh
+~/tools/python-tools.sh
+~/tools/python.sh
 ~/tools/terraform.sh
 ~/tools/velero.sh
 echo -e "\e[34m»»» 💪 \e[32mFinished Installing \e[33m'Common Tools'\e[32m. \e[39m"

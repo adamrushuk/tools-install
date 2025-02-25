@@ -17,7 +17,7 @@ $packages = @(
     # "openvpn",
     # "packer",
     # "postman",
-    # "PowerShell",
+    # "PowerShell", # use Windows Store instead
     "powertoys",
     # "putty.install",
     # "rufus",

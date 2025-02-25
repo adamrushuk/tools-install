@@ -1,10 +1,12 @@
 # See http://pre-commit.com for more information
 # See http://pre-commit.com/hooks.html for more hooks
 #
-# Apply to all files without committing:
-#   pre-commit run --all-files
+# Install git hooks
+#   pre-commit install
 # Update this file:
 #   pre-commit autoupdate
+# Apply to all files without committing:
+#   pre-commit run --all-files
 repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.76.0
