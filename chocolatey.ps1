@@ -33,3 +33,8 @@ $packages = @(
 foreach ($package in $packages) {
     choco install $package -y
 }
+
+# Pin versions of Chocolatey packages as they auto-update themselves outside of chocolatey
+# choco pin add -n=$package
+choco pin add -n=powertoys
+choco pin add -n=Firefox
