@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://pypi.org/project/pre-commit/#history
-VERSION='4.1.0'
+VERSION='4.2.0'
 
 start "pre-commit $VERSION"
 
