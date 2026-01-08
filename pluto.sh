@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/FairwindsOps/pluto/releases
-ver="5.19.0"
+ver="5.22.7"
 
 start "Pluto $ver"
 

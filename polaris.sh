@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/fairwindsops/polaris/releases
-ver="8.5.4"
+ver="10.1.3"
 
 start "Polaris $ver"
 
