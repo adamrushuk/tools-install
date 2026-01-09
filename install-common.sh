@@ -10,6 +10,7 @@ sudo apt upgrade -y
 echo -e "\e[34m»»» 🚀 \e[32mInstalling \e[33m'Common Tools'\e[32m ... \e[39m"
 ~/tools/azure-cli.sh
 ~/tools/helm.sh
+~/tools/kubectl.sh
 ~/tools/kube-tools.sh
 ~/tools/misc.sh
 ~/tools/powershell.sh

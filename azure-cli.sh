@@ -4,6 +4,15 @@ trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
+# use the highest version used in environment
+# KUBECTL_VERSION="latest"
+KUBECTL_VERSION="1.33.7"
+
+# use latest kubelogin version from:
+# https://github.com/Azure/kubelogin/releases
+# https://github.com/Azure/kubelogin/blob/main/CHANGELOG.md
+KUBELOGIN_VERSION="0.2.14"
+
 start 'Azure CLI'
 
 # install
@@ -15,7 +24,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 # https://github.com/Azure/kubelogin
 
 # use default aks version
-sudo az aks install-cli
+sudo az aks install-cli --client-version ${KUBECTL_VERSION} --kubelogin-version ${KUBELOGIN_VERSION}
 
 # version info
 command -v kubectl

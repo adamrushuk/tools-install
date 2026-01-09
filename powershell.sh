@@ -8,7 +8,10 @@ source "$DIR/.lib.sh"
 # apt-cache madison powershell | head -n 40
 # apt list update && apt list -a powershell
 
-start "PowerShell (ubuntu-2204)"
+start "PowerShell"
+
+###################################
+# Prerequisites
 
 # Update the list of packages
 sudo apt-get update
@@ -16,23 +19,28 @@ sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
 
-# Download the Microsoft repository GPG keys
-wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+# Get the version of Ubuntu
+source /etc/os-release
 
-# Register the Microsoft repository GPG keys
+# Download the Microsoft repository keys
+wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb
+
+# Register the Microsoft repository keys
 sudo dpkg -i packages-microsoft-prod.deb
+
+# Delete the Microsoft repository keys file
+rm packages-microsoft-prod.deb
 
 # Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
 
+###################################
 # Install PowerShell
 sudo apt-get install -y powershell
 
-# Cleanup
-rm packages-microsoft-prod.deb
-
 # Install modules
-pwsh --command "Install-Module -Name posh-git, PSReadLine -Verbose"
+pwsh --command "Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose"
+pwsh --command "Install-Module -Name posh-git, PSReadLine, Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore -Verbose"
 pwsh --command "Get-Module"
 
 end 'pwsh' '--version'
