@@ -8,8 +8,19 @@ source "$DIR/.lib.sh"
 VERSION='4.5.1'
 
 start "pre-commit $VERSION"
+# Default venv: allow override with PRE_COMMIT_VENV env var
+VENV_DIR="${PRE_COMMIT_VENV:-$DIR/.venv}"
+if [ ! -d "$VENV_DIR" ]; then
+	echo "Creating virtualenv at $VENV_DIR"
+	python3 -m venv "$VENV_DIR"
+fi
+# activate venv
+# shellcheck disable=SC1090
+source "$VENV_DIR/bin/activate"
 
-# https://pre-commit.com/#install
+# upgrade pip inside venv and install pre-commit there
+python -m pip install --upgrade pip
+pip --version
 pip install --no-input pre-commit==${VERSION}
 
 end 'pre-commit' '--version'
