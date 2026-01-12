@@ -39,8 +39,8 @@ sudo apt-get update
 sudo apt-get install -y powershell
 
 # Install modules
-pwsh --command "Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted' -Verbose"
-pwsh --command "Install-Module -Name posh-git, PSReadLine, Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore -Verbose"
-pwsh --command "Get-Module"
+pwsh --command "Set-PSRepository -Name 'PSGallery' -InstallationPolicy 'Trusted'"
+pwsh --command "Install-Module -Name posh-git, PSReadLine, Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore"
+pwsh --command "Get-Module -Name posh-git, PSReadLine, Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore -ListAvailable"
 
 end 'pwsh' '--version'

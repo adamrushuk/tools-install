@@ -7,6 +7,6 @@ sudo apt-get update -y
 sudo apt-get install -y jq pv unzip tree
 
 # Install WSL Utilities - Azure CLIs can open browser windows for login
-sudo add-apt-repository ppa:wslutilities/wslu
-sudo apt update
-sudo apt install wslu
+# sudo add-apt-repository ppa:wslutilities/wslu
+# sudo apt update
+# sudo apt install wslu
