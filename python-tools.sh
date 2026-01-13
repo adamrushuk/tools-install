@@ -4,21 +4,14 @@ trap "echo 'error: Script failed: see failed command above'" ERR
 DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
-# https://pypi.org/project/tldr/#history
-TLDR_VERSION='3.4.3'
 # PACKAGE_VERSION='x.x.x'
 
-# Default venv: allow override with PYTHON_TOOLS_VENV env var
-VENV_DIR="${PYTHON_TOOLS_VENV:-$DIR/.venv}"
-if [ ! -d "$VENV_DIR" ]; then
-    echo "Creating virtualenv at $VENV_DIR"
-    python3 -m venv "$VENV_DIR"
-fi
-# shellcheck disable=SC1090
-source "$VENV_DIR/bin/activate"
+# https://pypi.org/project/tldr/#history
+TLDR_VERSION='3.4.3'
 
-python -m pip install --upgrade pip
-pip --version
+# https://pypi.org/project/pre-commit/#history
+PRECOMMIT_VERSION='4.5.1'
 
-pip install --no-input \
-        tldr==${TLDR_VERSION}
+python3 -m pip install --break-system-packages --upgrade pip
+
+pip3 install --break-system-packages --no-input tldr==${TLDR_VERSION} pre-commit==${PRECOMMIT_VERSION}
