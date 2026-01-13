@@ -7,7 +7,7 @@ source "$DIR/.lib.sh"
 # show available versions (only available after adding k8s apt repo):
 # apt-cache madison kubectl | head -n 30
 VERSION="1.33.7-ubuntu24.04u1"
-MINOR_VERSION="v1.35"
+MINOR_VERSION="v1.33"
 
 start "kubectl $VERSION"
 
