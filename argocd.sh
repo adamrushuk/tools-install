@@ -5,7 +5,7 @@ DIR=$(cd "$(dirname "$0")" && pwd)
 source "$DIR/.lib.sh"
 
 # https://github.com/argoproj/argo-cd/releases
-version="2.10.18"
+version="3.1.10"
 
 start "Argo CD $version"
 

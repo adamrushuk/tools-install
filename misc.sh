@@ -3,10 +3,7 @@ set -euo pipefail
 trap "echo 'error: Script failed: see failed command above'" ERR
 
 # Misc system utilities
+# wslu is a set of utilities for WSL to improve integration with Windows
+# - required so Azure CLIs can open browser windows for login
 sudo apt-get update -y
-sudo apt-get install -y jq pv unzip tree
-
-# Install WSL Utilities - Azure CLIs can open browser windows for login
-sudo add-apt-repository ppa:wslutilities/wslu
-sudo apt update
-sudo apt install wslu
+sudo apt-get install -y jq pv unzip tree wslu
